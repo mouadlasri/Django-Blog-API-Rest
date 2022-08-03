@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 3rd-party apps
     'rest_framework',
     'rest_framework.authtoken', # we also need to add the authtoke napp which generates the tokens on the server, it comes included with Django REST Framework
+    'dj_rest_auth', # for log in, log out and password reset features
 
     # local
     'posts',
