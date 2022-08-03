@@ -41,11 +41,25 @@ INSTALLED_APPS = [
     # 3rd-party apps
     'rest_framework',
     'rest_framework.authtoken', # we also need to add the authtoke napp which generates the tokens on the server, it comes included with Django REST Framework
+
+    # for user registration
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount', 
+
     'dj_rest_auth', # for log in, log out and password reset features
+    'dj_rest_auth.registration',
 
     # local
     'posts',
 ]
+
+# this is needed isnce by default an email will be sent when a new user is registered, asking them to confirm their account
+# rather than also set up an email sever, we will output the emails to the console with the console.EmailBackend setting
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+
+#  this is part of the build-in Django "sites" framework, which is a way to host multiple websites from the same Django project
+SITE_ID = 1
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
