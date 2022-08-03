@@ -40,15 +40,20 @@ INSTALLED_APPS = [
 
     # 3rd-party apps
     'rest_framework',
+    'rest_framework.authtoken', # we also need to add the authtoke napp which generates the tokens on the server, it comes included with Django REST Framework
 
     # local
-    'posts.apps.PostsConfig',
+    'posts',
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication', # we need this for our Browsable API
+        'rest_framework.authentication.TokenAuthentication' # We need this to pass authentication credentials back and forth in our HTTP headers
+    ],
 }
 
 MIDDLEWARE = [
