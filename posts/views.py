@@ -8,7 +8,7 @@ from .permissions import IsAuthorOrReadOnly
 # Create your views here.
  
 class PostViewSet(viewsets.ModelViewSet): # ModelViewSet provides both a List view and Detail view
-    permission_classes =(IsAuthorOrReadOnly,)
+    permission_classes = (IsAuthorOrReadOnly,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
