@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     'dj_rest_auth', # for log in, log out and password reset features
     'dj_rest_auth.registration',
+    'drf_yasg', # api documentation
 
     # local
     'posts',
