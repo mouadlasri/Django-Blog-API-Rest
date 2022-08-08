@@ -25,7 +25,7 @@ urlpatterns = [
     path('api/v1/dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path('openapi', get_schema_view(
         title="Blog API",
-        decsription="A sample API for learning DRF",
+        description="A sample API for learning DRF",
         version="1.0.0"
     ), name='openapi-schema'),
 ]
